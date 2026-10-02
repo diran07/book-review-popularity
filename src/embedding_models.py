@@ -125,3 +125,7 @@ os.makedirs("results", exist_ok=True)
 if not LIMIT:
     res.to_csv("results/embedding_results.csv", index=False)
     print("saved results/embedding_results.csv")
+import joblib
+joblib.dump(xgb, "results/xgb_model.pkl")
+joblib.dump(sc, "results/scaler.pkl")
+print("saved results/xgb_model.pkl and results/scaler.pkl")
